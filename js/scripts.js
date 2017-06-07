@@ -8,15 +8,15 @@ var pigLatin = function(word) {
   for (var i = 0; i < vowels.length; i += 1) {
     if (word[0] === vowels[i]) {
       vowelFirst = true;
-    } else {
-      for (var i = 0; i < vowels.length; i += 1) {
-        for (var j = 0; j < word.length; j += 1) {
-          if (word[j] === vowels[i]) {
-            // alert(word[j] + " is the first vowel");
-          }
-        };
-      };
-    }
+    } // else {
+    //   for (var i = 0; i < vowels.length; i += 1) {
+    //     for (var j = 0; j < word.length; j += 1) {
+    //       if (word[j] === vowels[i]) {
+    //         // alert(word[j] + " is the first vowel");
+    //       }
+    //     };
+    //   };
+    // }
   };
 
 
@@ -28,6 +28,7 @@ var pigLatin = function(word) {
       var vowelYesY = word.slice(1, word.length);
       return vowelYesY + word[0] + "ay";
     } else {
+      //only a-words are working properly
       var vowelNotY = word.concat("way");
       return vowelNotY;
     }
