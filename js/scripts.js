@@ -13,6 +13,12 @@ var pigLatin = function(word) {
     };
   };
 
+  if (vowels[5] === word[0]) {
+    alert("Y is not a vowel");
+  } else {
+    alert("Y is a vowel");
+  }
+
   if (vowelsFound === true) {
     return "vowel spotted";
   } else if (/^[a-zA-Z]+$/.test(word) === false) {
