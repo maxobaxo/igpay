@@ -9,11 +9,9 @@ var pigLatin = function(word) {
     for (var j = 0; j < vowels.length; j += 1) {
       if (word[i] === vowels[j]) {
         vowelsFound = true;
-      } else {
-        return "no vowels found";
       }
-    }
-  }
+    };
+  };
 
   if (vowelsFound === true) {
     return "vowel spotted";
@@ -23,15 +21,6 @@ var pigLatin = function(word) {
     return "igpay";
   }
 };
-
-
-
-
-
-
-
-
-
 
 
 
