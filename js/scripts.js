@@ -1,10 +1,26 @@
 // Business logic below:
 
 var pigLatin = function(word) {
-  if (/^[a-zA-Z]+$/.test(word) === false) {
-    return "ERROR!"
+
+  var vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
+  var vowelsFound = false;
+
+  for (var i = 0; i < word.length; i += 1) {
+    for (var j = 0; j < vowels.length; j += 1) {
+      if (word[i] === vowels[j]) {
+        vowelsFound = true;
+      } else {
+        return "no vowels found";
+      }
+    }
+  }
+
+  if (vowelsFound === true) {
+    return "vowel spotted";
+  } else if (/^[a-zA-Z]+$/.test(word) === false) {
+    return "Non-Letters Detected!";
   } else {
-   return "igpay";
+    return "igpay";
   }
 };
 
