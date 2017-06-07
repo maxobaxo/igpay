@@ -7,6 +7,9 @@ define vowels, detect presence of vowel in string
 define y as a vowel except when it is the first letter of the word
   input: your, output: alert(y is not a vowel)
   input: toy. output: alert(y is a vowel)
-words beginning with a vowel, "way" to the end
+words beginning with a vowel, add "way" to the end
   input: about
   output: aboutway
+words beginning with y, move y to the end and add "ay"
+  input: your
+  output: ouryay

@@ -11,26 +11,29 @@ var pigLatin = function(word) {
     }
   };
 
-  if (vowels[5] === word[0]) {
-    //alert("Y is not a vowel");
-  } else {
-    //alert("Y is a vowel");
-  }
 
 
 
   if (vowelFirst === true) {
-    var vowelNotY = word.concat("way");
-    return vowelNotY;
-  } else if (/^[a-zA-Z]+$/.test(word) === false) {
-    return "Non-Letters Detected!";
+    if (vowels[5] === word[0]) {
+      //alert("Y is not a vowel");
+      var vowelYesY = word.slice(1, word.length);
+      return vowelYesY + word[0] + "ay";
+    } else {
+      var vowelNotY = word.concat("way");
+      return vowelNotY;
+    }
+  } else if (vowelFirst === false) {
+    //logic for first letter NOT a vowel
   } else {
-    return "igpay";
+    return "Error!";
   }
 };
 
 
 
+// if (/^[a-zA-Z]+$/.test(word) === false) {
+// return "Non-Letters Detected!";
 
 // UI logic below:
 
