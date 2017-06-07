@@ -3,24 +3,25 @@
 var pigLatin = function(word) {
 
   var vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
-  var vowelsFound = false;
+  var vowelFirst = false;
 
-  for (var i = 0; i < word.length; i += 1) {
-    for (var j = 0; j < vowels.length; j += 1) {
-      if (word[i] === vowels[j]) {
-        vowelsFound = true;
-      }
-    };
+  for (var i = 0; i < vowels.length; i += 1) {
+    if (word[0] === vowels[i]) {
+      vowelFirst = true;
+    }
   };
 
   if (vowels[5] === word[0]) {
-    alert("Y is not a vowel");
+    //alert("Y is not a vowel");
   } else {
-    alert("Y is a vowel");
+    //alert("Y is a vowel");
   }
 
-  if (vowelsFound === true) {
-    return "vowel spotted";
+
+
+  if (vowelFirst === true) {
+    var vowelNotY = word.concat("way");
+    return vowelNotY;
   } else if (/^[a-zA-Z]+$/.test(word) === false) {
     return "Non-Letters Detected!";
   } else {
