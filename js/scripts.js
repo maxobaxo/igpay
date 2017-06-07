@@ -25,6 +25,8 @@ var pigLatin = function(word) {
     }
   } else if (vowelFirst === false) {
     //logic for first letter NOT a vowel
+    var oneConsFirst = word.slice(1, word.length);
+    return oneConsFirst + word[0] + "ay";
   } else {
     return "Error!";
   }
