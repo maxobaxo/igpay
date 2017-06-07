@@ -1,7 +1,11 @@
 // Business logic below:
 
 var pigLatin = function(word) {
-  return "igpay";
+  if (/^[a-zA-Z]+$/.test(word) === false) {
+    return "ERROR!"
+  } else {
+   return "igpay";
+  }
 };
 
 
