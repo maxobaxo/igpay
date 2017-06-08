@@ -8,23 +8,23 @@ var pigLatin = function(word) {
   for (var i = 0; i < vowels.length; i += 1) {
     if (word[0] === vowels[i]) {
       vowelFirst = true;
-    } // else {
-    //   for (var i = 0; i < vowels.length; i += 1) {
-    //     for (var j = 0; j < word.length; j += 1) {
-    //       if (word[j] === vowels[i]) {
-    //         // alert(word[j] + " is the first vowel");
-    //       }
-    //     };
-    //   };
-    // }
+    } else {
+      for (var i = 0; i < vowels.length; i += 1) {
+        for (var j = 0; j < word.length; j += 1) {
+          if (word[1] === vowels[i]) {
+            var singleConsFirst = true;
+          } else if (word[2] === vowels[i]) {
+            var twoConsFirst = true;
+          } else if (word[3] === vowels[i]) {
+            var threeConsFirst = true;
+          }
+        };
+      };
+    }
   };
-
-
-
-
   if (vowelFirst === true) {
     if (vowels[5] === word[0]) {
-      //alert("Y is not a vowel");
+      //logic when Y is the first letter
       var vowelYesY = word.slice(1, word.length);
       return vowelYesY + word[0] + "ay";
     } else {
@@ -33,12 +33,21 @@ var pigLatin = function(word) {
       return vowelNotY;
     }
   } else if (vowelFirst === false) {
-    //logic first-x letters are consonants
-
+    //logic first few letters are consonants
+    if (singleConsFirst === true) {
+      var oneConsFirst = word.slice(1, word.length);
+      return oneConsFirst + word[0] + "ay";
+    } else {
+      if (twoConsFirst === true) {
+        var twoConsReturn = word.slice(2, word.length);
+        return twoConsReturn + word[0] + word[1] + "ay";
+      } else if (threeConsFirst === true) {
+        var threeConsReturn = word.slice(3, word.length);
+        return threeConsReturn + word[0] + word[1] + word[2] + "ay";
+      }
+    }
     // var multiConsFirst =
     //logic for first letter NOT a vowel
-    var oneConsFirst = word.slice(1, word.length);
-    return oneConsFirst + word[0] + "ay";
   } else {
     return "Error!";
   }
